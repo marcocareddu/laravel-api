@@ -1,0 +1,28 @@
+@use "header";
+@use "main";
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    background-color: #1E1E1E;
+    color: #54A7D7;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+h1 {
+    color: #AEB175;
+}
+
+i {
+    background: transparent;
+    color: antiquewhite;
+}
+
+.card {
+    border: 2px solid #9C432B;
+    padding: 0;
+}
+
+.active-txt {
+    color: #9C432B;
+    font-weight: 700;
+}

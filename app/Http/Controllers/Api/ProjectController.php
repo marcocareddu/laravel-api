@@ -14,6 +14,13 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::paginate(5);
+
+        foreach ($projects as $project) {
+            if ($project->thumb) {
+                $project->thumb = url('storage/' .  $project->thumb);
+            }
+        }
+
         return response()->json($projects);
     }
 

@@ -21,7 +21,7 @@
                             <h4>{{ $project->type?->label }}</h4>
 
                             {{-- Dinamic Relation Technologies --}}
-                            <h4>{{ $technology->label }}</h4>
+                            {{-- <h4>{{ $technology->label }}</h4> --}}
                         </div>
                         <div class="d-flex">
                             <a href="{{ $project->url }}" class="btn btn-outline-dark"><i

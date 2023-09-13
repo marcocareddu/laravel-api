@@ -21,13 +21,13 @@ class MailController extends Controller
             [
                 'mail' => 'required|email',
                 'subject' => 'required|string',
-                'mail-text' => 'required|string',
+                'mailText' => 'required|string',
             ],
             [
                 'mail.required' => 'Devi inserire una mail',
                 'mail.email' => 'La mail non è valida',
                 'subject.required' => "L'oggetto è obbligatorio",
-                'mail-text.required' => "Devi inserire il contenuto"
+                'mailText.required' => "Devi inserire il contenuto"
             ]
         );
 
@@ -40,7 +40,7 @@ class MailController extends Controller
         $mail = new MessageMail(
             sender: $data['mail'],
             subject: $data['subject'],
-            content: $data['mail-text']
+            content: $data['mailText']
         );
 
         Mail::to(env('MAIL_TO_ADDRESS'))->send($mail);

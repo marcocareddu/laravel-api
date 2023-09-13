@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\MailController;
 use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 // All API Projects Route
 Route::apiResource('projects', ProjectController::class);
+
+// API Mail Message
+Route::post('/mail-message', [MailController::class, 'mailMessage']);

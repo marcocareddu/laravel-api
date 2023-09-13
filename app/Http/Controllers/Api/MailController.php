@@ -9,11 +9,17 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function mailMessage()
+    public function mailMessage(Request $request)
     {
-        $mail = new MessageMail();
-        Mail::to(env('MAIL_TO_ADDRESS'))->send($mail);
 
+        $data = $request->all();
+        $mail = new MessageMail(
+            sender: $data['mail'],
+            subject: $data['subject'],
+            content: $data['mail-text']
+        );
+
+        Mail::to(env('MAIL_TO_ADDRESS'))->send($mail);
         return response(null, 204);
     }
 }

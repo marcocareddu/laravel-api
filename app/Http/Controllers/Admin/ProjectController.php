@@ -60,7 +60,7 @@ class ProjectController extends Controller
         $data = $request->all();
         $project = new Project;
 
-        // If thumb exists, save file under images folder & update its path
+        // If thumb exists in data, save file under images folder & update its path
         if (array_key_exists('thumb', $data)) {
             $img_url = Storage::putFile('images', $data['thumb']);
             $data['thumb'] = $img_url;
@@ -115,7 +115,7 @@ class ProjectController extends Controller
 
         $data = $request->all();
 
-        // If thumb exists, save file under images folder & update its path
+        // If thumb exists in data, save file under images folder & update its path
         if (array_key_exists('thumb', $data)) {
             if ($project->thumb) Storage::delete($project->thumb);
             $img_url = Storage::putFile('images', $data['thumb']);

@@ -19,15 +19,15 @@ class MailController extends Controller
         $validator = Validator::make(
             $data,
             [
-                'email' => 'required|email',
+                'mail' => 'required|email',
                 'subject' => 'required|string',
-                'content' => 'required|string',
+                'mail-text' => 'required|string',
             ],
             [
-                'email.required' => 'Devi inserire una mail',
-                'email.email' => 'La mail non è valida',
+                'mail.required' => 'Devi inserire una mail',
+                'mail.email' => 'La mail non è valida',
                 'subject.required' => "L'oggetto è obbligatorio",
-                'content.required' => "Devi inserire il contenuto"
+                'mail-text.required' => "Devi inserire il contenuto"
             ]
         );
 

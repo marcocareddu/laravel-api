@@ -10,6 +10,9 @@
 
 <body>
     <h1>Test nuovo messaggio</h1>
+    <h3>Inviato da: {{ $sender }}</h3>
+    <h3>Oggetto: {{ $subject }}</h3>
+    <p>Testo: {{ $content }}</p>
 </body>
 
 </html>

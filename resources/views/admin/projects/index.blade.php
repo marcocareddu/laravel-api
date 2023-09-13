@@ -11,7 +11,8 @@
         <div class="row justify-content-center">
             @foreach ($projects as $project)
                 <div class="card col-5 m-3 text-bg-dark">
-                    <img src="{{ asset('storage/' . $project->thumb) }}" class="card-img-top" alt="...">
+                    <img src="src="{{ $project->thumb ? asset('storage/' . $project->thumb) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
+                        class="card-img-top" alt="...">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
                             <h5 class="card-title">{{ $project->name }}</h5>
